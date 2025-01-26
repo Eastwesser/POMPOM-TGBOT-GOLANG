@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"pompon-bot-golang/internal/utils"
 	"syscall"
 
 	"pompon-bot-golang/internal/config"
@@ -12,7 +13,14 @@ import (
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
+var logger *log.Logger
+
+func init() {
+	logger = utils.CreateLogger("bot.log")
+}
+
 func main() {
+	logger.Println("Бот запускается...")
 	// Загружаем конфигурацию
 	cfg := config.LoadConfig()
 
