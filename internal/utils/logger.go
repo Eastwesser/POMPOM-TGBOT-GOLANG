@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"io"
 	"log"
 	"os"
 )
@@ -12,7 +13,7 @@ func CreateLogger(logFilePath string) *log.Logger {
 		log.Fatalf("Ошибка при создании лог-файла: %v", err)
 	}
 
-	multiWriter := log.MultiWriter(file, os.Stdout)
+	multiWriter := io.MultiWriter(file, os.Stdout)
 	logger := log.New(multiWriter, "POMPON-BOT: ", log.Ldate|log.Ltime|log.Lshortfile)
 	return logger
 }
