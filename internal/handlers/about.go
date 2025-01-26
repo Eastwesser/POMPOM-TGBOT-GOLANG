@@ -17,3 +17,10 @@ func CatalogKeyboard() tgbotapi.ReplyKeyboardMarkup {
 		),
 	)
 }
+
+// HandleAbout отвечает на команду /about
+func HandleAbout(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
+	// Пример логики для обработки команды /about
+	message := tgbotapi.NewMessage(update.Message.Chat.ID, "Информация о магазине")
+	_, _ = bot.Send(message)
+}
