@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"pompon-bot/internal/config"
-	"pompon-bot/internal/handlers"
+	"pompon-bot-golang/internal/config"
+	"pompon-bot-golang/internal/handlers"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
