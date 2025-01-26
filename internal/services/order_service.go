@@ -2,7 +2,7 @@ package services
 
 import (
 	"context"
-	"pompon-bot/internal/models"
+	"pompon-bot-golang/internal/models"
 )
 
 // Логика обработки заказов
