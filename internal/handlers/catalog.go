@@ -1,9 +1,5 @@
 package handlers
 
-// Логика работы с каталогом товаров
-
-// catalog.go: Обрабатывает команду /catalog, показывает категории и список товаров.
-
 import (
 	"context"
 	"fmt"
@@ -11,6 +7,10 @@ import (
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
+
+// Логика работы с каталогом товаров
+
+// catalog.go: Обрабатывает команду /catalog, показывает категории и список товаров.
 
 func HandleCatalog(ctx context.Context, bot *tgbotapi.BotAPI, chatID int64) {
 	categories := services.GetCategories(ctx)
