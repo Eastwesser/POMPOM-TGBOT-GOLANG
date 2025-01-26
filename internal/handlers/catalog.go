@@ -3,7 +3,7 @@ package handlers
 import (
 	"context"
 	"fmt"
-	"pompon-bot/internal/services"
+	"pompon-bot-golang/internal/services"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
