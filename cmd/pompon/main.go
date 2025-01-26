@@ -52,9 +52,9 @@ func main() {
 			// Обработка команд
 			switch update.Message.Command() {
 			case "about":
-				handlers.HandleAbout(bot, update.Message.Chat.ID)
+				handlers.HandleAbout(update, bot)
 			case "catalog":
-				handlers.HandleCatalog(nil, bot, update.Message.Chat.ID) // TODO: Передать контекст базы данных
+				handlers.HandleCatalog(nil, bot, update.Message.Chat.ID) // Заменить nil на контекст базы данных
 			case "order":
 				handlers.HandleOrder(bot, update.Message.Chat.ID, update.Message.Text)
 			case "subscribe":
