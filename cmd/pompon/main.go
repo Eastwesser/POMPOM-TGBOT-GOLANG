@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"os/signal"
@@ -16,11 +17,17 @@ import (
 var logger *log.Logger
 
 func init() {
-	logger = utils.CreateLogger("bot.log")
+	// Создаем логгер один раз при старте приложения
+	logger = utils.CreateLogger("bot.log", utils.LoggerConfig{
+		Prefix: "POMPON-BOT",
+		Level:  utils.LevelInfo,
+	})
 }
 
 func main() {
-	logger.Println("Бот запускается...")
+	utils.LogInfo(logger, "Бот запускается...")
+
+	// Загружаем конфигурацию
 	cfg := config.LoadConfig()
 
 	// Подключение к базе данных
@@ -30,11 +37,21 @@ func main() {
 	// Инициализация Telegram Bot API
 	bot, err := tgbotapi.NewBotAPI(cfg.TelegramAPIKey)
 	if err != nil {
-		logger.Fatalf("Failed to initialize bot: %v", err)
+		utils.LogError(logger, fmt.Sprintf("Failed to initialize bot: %v", err))
+		os.Exit(1)
 	}
 
 	bot.Debug = true
-	logger.Printf("Authorized on account %s", bot.Self.UserName)
+	utils.LogInfo(logger, fmt.Sprintf("Authorized on account %s", bot.Self.UserName))
+
+	// Пример использования ToSnakeCase
+	camelCase := "CamelCaseString"
+	snakeCase := utils.ToSnakeCase(camelCase)
+	utils.LogInfo(logger, fmt.Sprintf("Snake case: %s", snakeCase)) // Вывод: camel_case_string
+
+	// Пример использования IsEmpty
+	emptyStr := ""
+	utils.LogInfo(logger, fmt.Sprintf("Is empty: %v", utils.IsEmpty(emptyStr))) // Вывод: true
 
 	// Канал для обработки системных сигналов
 	stop := make(chan os.Signal, 1)
@@ -47,6 +64,13 @@ func main() {
 	go func() {
 		for update := range updates {
 			if update.Message != nil {
+				// Логируем входящее сообщение с полями
+				fields := map[string]interface{}{
+					"chat_id": update.Message.Chat.ID,
+					"text":    update.Message.Text,
+				}
+				utils.LogWithFields(logger, utils.LevelInfo, "Received message", fields)
+
 				switch update.Message.Command() {
 				case "start":
 					handlers.HandleStart(update, bot)
@@ -68,6 +92,7 @@ func main() {
 		}
 	}()
 
+	// Ожидание сигнала завершения
 	<-stop
-	logger.Println("Бот завершает работу.")
+	utils.LogInfo(logger, "Бот завершает работу.")
 }
