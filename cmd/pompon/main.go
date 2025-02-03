@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/signal"
 	"pompon-bot-golang/internal/utils"
+	"strings"
 	"syscall"
 
 	"pompon-bot-golang/internal/config"
@@ -51,6 +52,8 @@ func main() {
 
 			// Обработка команд
 			switch update.Message.Command() {
+			case "start":
+				handlers.HandleStart(update, bot)
 			case "about":
 				handlers.HandleAbout(update, bot)
 			case "catalog":
@@ -60,11 +63,20 @@ func main() {
 			case "subscribe":
 				handlers.HandleSubscribe(bot, update.Message.Chat.ID)
 			default:
-				msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Неизвестная команда. Попробуйте /about, /catalog, /order или /subscribe.")
+				msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Неизвестная команда. Попробуйте /start, /about, /catalog, /order или /subscribe.")
 				bot.Send(msg)
 			}
 		}
 	}()
+
+	if update.CallbackQuery != nil {
+		data := update.CallbackQuery.Data
+		if strings.HasPrefix(data, "category_") {
+			category := strings.TrimPrefix(data, "category_")
+			handlers.HandleCategory(nil, bot, update.CallbackQuery.Message.Chat.ID, category)
+		}
+		return
+	}
 
 	// Ожидание завершения работы
 	<-stop
