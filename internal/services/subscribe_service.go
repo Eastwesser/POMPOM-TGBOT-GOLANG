@@ -13,17 +13,17 @@ import (
 		Используется для обработки команд, таких как /subscribe и /unsubscribe.
 */
 
-// Добавление пользователя в список подписчиков
-func AddSubscriber(ctx context.Context, telegramID int64) error {
-	// Здесь будет логика сохранения подписчика в базе данных
-	return nil
+// AddSubscriber добавляет подписчика
+func AddSubscriber(ctx context.Context, db *pgxpool.Pool, telegramID int64) error {
+	_, err := db.Exec(ctx, "INSERT INTO subscribers (telegram_id) VALUES ($1) ON CONFLICT DO NOTHING", telegramID)
+	return err
 }
 
-// Удаление пользователя из списка подписчиков
-func RemoveSubscriber(ctx context.Context, telegramID int64) error {
-	// Логика удаления подписчика
-	return nil
-}
+// RemoveSubscriber удаляет подписчика
+func RemoveSubscriber(ctx context.Context, db *pgxpool.Pool, telegramID int64) error {
+	_, err := db.Exec(ctx, "DELETE FROM subscribers WHERE telegram_id = $1", telegramID)
+	return err
+}}
 
 // Получение всех подписчиков
 func ListSubscribers(ctx context.Context) ([]models.Subscriber, error) {

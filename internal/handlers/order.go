@@ -2,23 +2,38 @@ package handlers
 
 import (
 	"fmt"
+	"pompon-bot-golang/internal/keyboards"
+	"strconv"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
-// Обработка заказов
+var userState = make(map[int64]string) // Хранение состояния пользователя
 
-// order.go: Реализует оформление заказа через Telegram (например, с вводом количества товаров).
-
+// HandleOrder обрабатывает команду /order
 func HandleOrder(bot *tgbotapi.BotAPI, chatID int64, messageText string) {
-	// Логика заказа (пока упрощенная)
 	if messageText == "/order" {
-		msg := tgbotapi.NewMessage(chatID, "Введите количество товаров для заказа:")
+		msg := tgbotapi.NewMessage(chatID, "Выберите категорию:")
+		msg.ReplyMarkup = keyboards.CatalogKeyboard()
 		bot.Send(msg)
+		userState[chatID] = "waiting_for_category"
 		return
 	}
 
-	// Здесь можно проверить, что пользователь ввел цифру
-	msg := tgbotapi.NewMessage(chatID, fmt.Sprintf("Ваш заказ на %s товаров принят! 🎉", messageText))
-	bot.Send(msg)
+	switch userState[chatID] {
+	case "waiting_for_category":
+		msg := tgbotapi.NewMessage(chatID, "Введите количество товаров:")
+		bot.Send(msg)
+		userState[chatID] = "waiting_for_quantity"
+	case "waiting_for_quantity":
+		quantity, err := strconv.Atoi(messageText)
+		if err != nil {
+			msg := tgbotapi.NewMessage(chatID, "Пожалуйста, введите число.")
+			bot.Send(msg)
+			return
+		}
+		msg := tgbotapi.NewMessage(chatID, fmt.Sprintf("Ваш заказ на %d товаров принят! 🎉", quantity))
+		bot.Send(msg)
+		delete(userState, chatID)
+	}
 }

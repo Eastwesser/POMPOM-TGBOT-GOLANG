@@ -2,25 +2,29 @@ package handlers
 
 import tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 
-// Информация о магазине
+// HandleStart обрабатывает команду /start
+func HandleStart(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
+	msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Добро пожаловать в магазин POMPON! 🎁\nВыберите действие:")
+	msg.ReplyMarkup = MainMenuKeyboard()
+	bot.Send(msg)
+}
 
-// about.go: Команда /about с информацией о магазине.
-
-func CatalogKeyboard() tgbotapi.ReplyKeyboardMarkup {
+// MainMenuKeyboard создает клавиатуру для главного меню
+func MainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 	return tgbotapi.NewReplyKeyboard(
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("Коробочки 🎁"),
-			tgbotapi.NewKeyboardButton("Открытки 🧧"),
+			tgbotapi.NewKeyboardButton("🔹 О нас (/about)"),
+			tgbotapi.NewKeyboardButton("📦 Каталог (/catalog)"),
 		),
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("Обёртки 🎀"),
+			tgbotapi.NewKeyboardButton("🛒 Заказать (/order)"),
+			tgbotapi.NewKeyboardButton("🔔 Подписка (/subscribe)"),
 		),
 	)
 }
 
 // HandleAbout отвечает на команду /about
 func HandleAbout(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
-	// Пример логики для обработки команды /about
-	message := tgbotapi.NewMessage(update.Message.Chat.ID, "Информация о магазине")
-	_, _ = bot.Send(message)
+	msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Мы — магазин POMPON! 🎁\nЗдесь вы найдете лучшие коробочки, открытки и обёртки для ваших подарков.")
+	bot.Send(msg)
 }
