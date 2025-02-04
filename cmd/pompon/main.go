@@ -112,6 +112,32 @@ func main() {
 		}
 	}()
 
+	// Пример использования сервисов
+	categories, err = catalogService.GetCategories(context.Background())
+	if err != nil {
+		utils.LogError(logger, fmt.Sprintf("Failed to get categories: %v", err))
+	} else {
+		for _, category := range categories {
+			utils.LogInfo(logger, fmt.Sprintf("Category: %s", category))
+		}
+	}
+
+	order = models.Order{
+		UserID:   1,
+		Product:  models.Product{ID: 1},
+		Quantity: 2,
+		Status:   "pending",
+	}
+	if err := orderService.CreateOrder(context.Background(), order); err != nil {
+		utils.LogError(logger, fmt.Sprintf("Failed to create order: %v", err))
+	} else {
+		// Отправляем уведомление подписчикам о новом заказе
+		message := fmt.Sprintf("Новый заказ создан: %s, количество: %d", order.Product.Name, order.Quantity)
+		if err := notifyService.NotifyAllSubscribers(context.Background(), message); err != nil {
+			utils.LogError(logger, fmt.Sprintf("Failed to notify subscribers: %v", err))
+		}
+	}
+
 	// Ожидание сигнала завершения
 	<-stop
 	utils.LogInfo(logger, "Бот завершает работу.")
