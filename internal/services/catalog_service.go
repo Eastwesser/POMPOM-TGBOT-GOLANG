@@ -2,16 +2,26 @@ package services
 
 import (
 	"context"
-	"pompon-bot-golang/internal/models"
-
+	"fmt"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"pompon-bot-golang/internal/models"
 )
 
-// GetCategories возвращает список категорий
-func GetCategories(db *pgxpool.Pool) ([]string, error) {
-	rows, err := db.Query(context.Background(), "SELECT name FROM categories")
+// CatalogService предоставляет методы для работы с каталогом товаров.
+type CatalogService struct {
+	db *pgxpool.Pool
+}
+
+// NewCatalogService создает новый экземпляр CatalogService.
+func NewCatalogService(db *pgxpool.Pool) *CatalogService {
+	return &CatalogService{db: db}
+}
+
+// GetCategories возвращает список категорий товаров.
+func (s *CatalogService) GetCategories(ctx context.Context) ([]string, error) {
+	rows, err := s.db.Query(ctx, "SELECT name FROM categories")
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to get categories: %w", err)
 	}
 	defer rows.Close()
 
@@ -19,18 +29,19 @@ func GetCategories(db *pgxpool.Pool) ([]string, error) {
 	for rows.Next() {
 		var name string
 		if err := rows.Scan(&name); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to scan category: %w", err)
 		}
 		categories = append(categories, name)
 	}
+
 	return categories, nil
 }
 
-// GetProductsByCategory возвращает товары по категории
-func GetProductsByCategory(ctx context.Context, db *pgxpool.Pool, categoryID string) ([]models.Product, error) {
-	rows, err := db.Query(ctx, "SELECT id, name, description, price FROM products WHERE category_id = $1", categoryID)
+// GetProductsByCategory возвращает список товаров по категории.
+func (s *CatalogService) GetProductsByCategory(ctx context.Context, category string) ([]models.Product, error) {
+	rows, err := s.db.Query(ctx, "SELECT id, name, description, price FROM products WHERE category = $1", category)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to get products: %w", err)
 	}
 	defer rows.Close()
 
@@ -38,9 +49,10 @@ func GetProductsByCategory(ctx context.Context, db *pgxpool.Pool, categoryID str
 	for rows.Next() {
 		var product models.Product
 		if err := rows.Scan(&product.ID, &product.Name, &product.Description, &product.Price); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to scan product: %w", err)
 		}
 		products = append(products, product)
 	}
+
 	return products, nil
 }
