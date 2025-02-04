@@ -68,3 +68,23 @@ func (s *OrderService) GetOrdersByUser(ctx context.Context, userID int) ([]model
 
 	return orders, nil
 }
+
+// GetCategories возвращает список категорий товаров.
+func (s *OrderService) GetCategories(ctx context.Context) ([]string, error) {
+	rows, err := s.db.Query(ctx, "SELECT name FROM categories")
+	if err != nil {
+		return nil, fmt.Errorf("failed to get categories: %w", err)
+	}
+	defer rows.Close()
+
+	var categories []string
+	for rows.Next() {
+		var name string
+		if err := rows.Scan(&name); err != nil {
+			return nil, fmt.Errorf("failed to scan category: %w", err)
+		}
+		categories = append(categories, name)
+	}
+
+	return categories, nil
+}

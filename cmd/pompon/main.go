@@ -50,7 +50,7 @@ func main() {
 	// Инициализация сервисов
 	catalogService := services.NewCatalogService(db)
 	orderService := services.NewOrderService(db)
-	notifyService := services.NewNotifyService(db, bot) // Передаем bot в NotifyService
+	notifyService := services.NewNotifyService(db, bot)
 	subscribeService := services.NewSubscribeService(db)
 
 	// Пример использования сервисов

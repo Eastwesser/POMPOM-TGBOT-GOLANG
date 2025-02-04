@@ -8,6 +8,7 @@ import (
 	"pompon-bot-golang/internal/services"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	"github.com/jackc/pgx/v5/pgxpool"
 )
 
 // HandleCatalog обрабатывает команду /catalog

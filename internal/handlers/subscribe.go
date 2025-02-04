@@ -7,9 +7,9 @@ import (
 )
 
 // HandleSubscribe обрабатывает команду /subscribe
-func HandleSubscribe(bot *tgbotapi.BotAPI, chatID int64) {
+func HandleSubscribe(subscribeService *services.SubscribeService, bot *tgbotapi.BotAPI, chatID int64) {
 	ctx := context.Background()
-	err := services.AddSubscriber(ctx, chatID)
+	err := subscribeService.AddSubscriber(ctx, chatID)
 	if err != nil {
 		msg := tgbotapi.NewMessage(chatID, "Ошибка при подписке. Попробуйте позже.")
 		bot.Send(msg)
@@ -20,9 +20,9 @@ func HandleSubscribe(bot *tgbotapi.BotAPI, chatID int64) {
 }
 
 // HandleUnsubscribe обрабатывает отписку
-func HandleUnsubscribe(bot *tgbotapi.BotAPI, chatID int64) {
+func HandleUnsubscribe(subscribeService *services.SubscribeService, bot *tgbotapi.BotAPI, chatID int64) {
 	ctx := context.Background()
-	err := services.RemoveSubscriber(ctx, chatID)
+	err := subscribeService.RemoveSubscriber(ctx, chatID)
 	if err != nil {
 		msg := tgbotapi.NewMessage(chatID, "Ошибка при отписке. Попробуйте позже.")
 		bot.Send(msg)
