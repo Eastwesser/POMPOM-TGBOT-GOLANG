@@ -21,4 +21,5 @@ go.work.sum
 # env file
 .env
 .idea
-.vendor
+vendor
+vendor
