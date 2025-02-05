@@ -22,3 +22,6 @@ go.work.sum
 .env
 .idea
 vendor
+
+# logs
+bot.log
