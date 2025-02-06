@@ -12,7 +12,7 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-vendor/
+.vendor/
 
 # Go workspace file
 go.work
@@ -23,7 +23,7 @@ go.work.sum
 .idea
 
 # logs
-bot.log
+.bot.log
 
 # docker secret data
-docker-compose.yml
+.docker-compose.yml
