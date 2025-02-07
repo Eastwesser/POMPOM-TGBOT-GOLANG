@@ -11,9 +11,6 @@ services:
       - DATABASE_URL=postgres://postgres:password@db:5432/pompon
     depends_on:
       - db
-    volumes:
-      - .:/app
-    command: [ "./pompon-bot" ]
     restart: always
     networks:
       - pompon-network
@@ -37,3 +34,4 @@ volumes:
 
 networks:
   pompon-network:
+    driver: bridge
