@@ -28,11 +28,11 @@ func HandleCatalog(catalogService *services.CatalogService, bot *tgbotapi.BotAPI
 
 // HandleCallbackQuery обрабатывает callback-запросы
 func HandleCallbackQuery(db *pgxpool.Pool, bot *tgbotapi.BotAPI, callbackQuery *tgbotapi.CallbackQuery) {
-	ctx := context.Background()
 	data := callbackQuery.Data
+	log.Printf("Полученные данные callback: %s", data)
 
 	catalogService := services.NewCatalogService(db)
-	if products, err := catalogService.GetProductsByCategory(ctx, data); err == nil {
+	if products, err := catalogService.GetProductsByCategory(context.Background(), data); err == nil {
 		msg := tgbotapi.NewMessage(callbackQuery.Message.Chat.ID, "Товары в категории:")
 		for _, product := range products {
 			msg.Text += fmt.Sprintf("\n- %s: %s (%.2f руб.)", product.Name, product.Description, product.Price)

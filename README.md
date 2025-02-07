@@ -67,7 +67,7 @@ BOT_TOKEN=ваш_токен_бота DATABASE_URL=postgres://postgres:password@d
 ### 3. Запустите контейнеры
 Выполните команду для запуска проекта:
 ```bash
-docker-compose up --build
+docker-compose up --build -d
 ```
 Бот будет запущен и подключится к базе данных PostgreSQL.
 

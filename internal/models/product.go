@@ -1,10 +1,8 @@
 package models
 
 // Модель товара
-
 /*
-	Модели базы данных для работы с PostgreSQL:
-		product.go: Модель для товаров (id, название, цена, описание, категория).
+	product.go: Модель для товаров (id, название, цена, описание, категория).
 */
 
 type Product struct {
@@ -12,5 +10,6 @@ type Product struct {
 	Name        string
 	Description string
 	Price       float64
-	CategoryID  int
+	CategoryID  int      // связь с категорией
+	Category    Category // добавляем связь с моделью Category
 }
