@@ -1,5 +1,5 @@
-# Используем базовый образ
-FROM golang:1.21 as builder
+# Используем базовый образ для сборки
+FROM golang:1.23 AS builder
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
@@ -13,20 +13,20 @@ RUN go mod download
 # Копируем весь проект
 COPY . .
 
-# Сборка проекта
-RUN go build -o pompon-bot ./cmd/bot/main.go
+# Сборка проекта и установка прав на исполнимость
+RUN go build -o /app/pompon-bot ./cmd/pompon/main.go && chmod +x /app/pompon-bot
 
 # Минимальный образ для запуска
-FROM gcr.io/distroless/base-debian11
+FROM gcr.io/distroless/static-debian11
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
 # Копируем скомпилированный файл
-COPY --from=builder /app/pompon-bot .
+COPY --from=builder /app/pompon-bot /app/
 
 # Открываем порт для бота (опционально)
 EXPOSE 8080
 
 # Запускаем приложение
-CMD ["./pompon-bot"]
+CMD ["/app/pompon-bot"]
