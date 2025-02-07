@@ -3,3 +3,45 @@ POMPON-BOT: 2025/02/05 06:07:45 logger.go:40: [INFO] Бот запускаетс
 POMPON-BOT: 2025/02/05 06:10:06 logger.go:40: [INFO] Бот запускается...
 POMPON-BOT: 2025/02/05 09:47:11 logger.go:40: [INFO] Бот запускается...
 POMPON-BOT: 2025/02/07 01:05:20 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 03:57:52 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 04:02:30 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 04:10:52 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 04:10:55 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 04:10:56 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 04:10:56 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 04:10:56 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 04:10:56 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 04:11:55 logger.go:59: [INFO] Received message chat_id=5756911009 text=/start 
+POMPON-BOT: 2025/02/07 04:12:06 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔹 О нас (/about) 
+POMPON-BOT: 2025/02/07 04:12:10 logger.go:59: [INFO] Received message chat_id=5756911009 text=📦 Каталог (/catalog) 
+POMPON-BOT: 2025/02/07 04:12:13 logger.go:59: [INFO] Received message chat_id=5756911009 text=🛒 Заказать (/order) 
+POMPON-BOT: 2025/02/07 04:12:15 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔔 Подписка (/subscribe) 
+POMPON-BOT: 2025/02/07 04:12:29 logger.go:59: [INFO] Received message chat_id=5756911009 text=/start 
+POMPON-BOT: 2025/02/07 04:14:14 logger.go:40: [INFO] Бот завершает работу.
+POMPON-BOT: 2025/02/07 05:38:25 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 05:38:25 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 05:38:25 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 05:38:25 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 05:38:25 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 05:38:25 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 05:39:27 logger.go:59: [INFO] Received message chat_id=5756911009 text=/start 
+POMPON-BOT: 2025/02/07 05:39:31 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔹 О нас 
+POMPON-BOT: 2025/02/07 05:39:33 logger.go:59: [INFO] Received message text=📦 Каталог chat_id=5756911009 
+POMPON-BOT: 2025/02/07 05:39:36 logger.go:59: [INFO] Received message chat_id=5756911009 text=🛒 Заказать 
+POMPON-BOT: 2025/02/07 05:39:37 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔔 Подписка 
+POMPON-BOT: 2025/02/07 05:46:06 logger.go:40: [INFO] Бот завершает работу.
+POMPON-BOT: 2025/02/07 05:51:41 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 05:52:21 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 05:52:21 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 05:52:21 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 05:52:21 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 05:52:21 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 05:52:21 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 05:52:46 logger.go:40: [INFO] Бот завершает работу.
+POMPON-BOT: 2025/02/07 06:05:18 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 06:05:18 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 06:05:18 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 06:05:18 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 06:05:18 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 06:05:18 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 06:06:29 logger.go:40: [INFO] Бот завершает работу.

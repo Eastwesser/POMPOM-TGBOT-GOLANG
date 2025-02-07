@@ -13,12 +13,12 @@ func HandleStart(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 func MainMenuKeyboard() tgbotapi.ReplyKeyboardMarkup {
 	return tgbotapi.NewReplyKeyboard(
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("🔹 О нас (/about)"),
-			tgbotapi.NewKeyboardButton("📦 Каталог (/catalog)"),
+			tgbotapi.NewKeyboardButton("🔹 О нас"),
+			tgbotapi.NewKeyboardButton("📦 Каталог"),
 		),
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("🛒 Заказать (/order)"),
-			tgbotapi.NewKeyboardButton("🔔 Подписка (/subscribe)"),
+			tgbotapi.NewKeyboardButton("🛒 Заказать"),
+			tgbotapi.NewKeyboardButton("🔔 Подписка"),
 		),
 	)
 }
