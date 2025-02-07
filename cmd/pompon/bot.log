@@ -45,3 +45,74 @@ POMPON-BOT: 2025/02/07 06:05:18 logger.go:45: [ERROR] Failed to create order: fa
 POMPON-BOT: 2025/02/07 06:05:18 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
 POMPON-BOT: 2025/02/07 06:05:18 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
 POMPON-BOT: 2025/02/07 06:06:29 logger.go:40: [INFO] Бот завершает работу.
+POMPON-BOT: 2025/02/07 06:10:29 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 06:10:29 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 06:10:29 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 06:10:29 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 06:10:29 logger.go:45: [ERROR] Failed to get categories: failed to get categories: ERROR: relation "categories" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 06:10:29 logger.go:45: [ERROR] Failed to create order: failed to insert order: ERROR: relation "orders" does not exist (SQLSTATE 42P01)
+POMPON-BOT: 2025/02/07 06:10:34 logger.go:40: [INFO] Бот завершает работу.
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:40: [INFO] Category: Коробочки
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:40: [INFO] Category: Открытки
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:40: [INFO] Category: Обёртки
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:40: [INFO] Category: Коробочки
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:40: [INFO] Category: Открытки
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:40: [INFO] Category: Обёртки
+POMPON-BOT: 2025/02/07 06:16:13 logger.go:45: [ERROR] Failed to notify subscribers: failed to send message to subscriber 123456789: Bad Request: chat not found
+POMPON-BOT: 2025/02/07 06:16:40 logger.go:59: [INFO] Received message chat_id=5756911009 text=/start 
+POMPON-BOT: 2025/02/07 06:16:53 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔹 О нас 
+POMPON-BOT: 2025/02/07 06:16:56 logger.go:59: [INFO] Received message chat_id=5756911009 text=📦 Каталог 
+POMPON-BOT: 2025/02/07 06:16:58 logger.go:59: [INFO] Received message chat_id=5756911009 text=🛒 Заказать 
+POMPON-BOT: 2025/02/07 06:17:01 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔔 Подписка 
+POMPON-BOT: 2025/02/07 06:17:07 logger.go:40: [INFO] Бот завершает работу.
+POMPON-BOT: 2025/02/07 06:24:35 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 06:24:36 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 06:24:36 logger.go:40: [INFO] Category: Коробочки
+POMPON-BOT: 2025/02/07 06:24:36 logger.go:40: [INFO] Category: Открытки
+POMPON-BOT: 2025/02/07 06:24:36 logger.go:40: [INFO] Category: Обёртки
+POMPON-BOT: 2025/02/07 06:24:36 logger.go:40: [INFO] Category: Коробочки
+POMPON-BOT: 2025/02/07 06:24:36 logger.go:40: [INFO] Category: Открытки
+POMPON-BOT: 2025/02/07 06:24:36 logger.go:40: [INFO] Category: Обёртки
+POMPON-BOT: 2025/02/07 06:24:36 logger.go:45: [ERROR] Failed to notify subscribers: failed to send message to subscriber 123456789: Bad Request: chat not found
+POMPON-BOT: 2025/02/07 06:24:43 logger.go:59: [INFO] Received message chat_id=5756911009 text=/start 
+POMPON-BOT: 2025/02/07 06:24:45 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔹 О нас 
+POMPON-BOT: 2025/02/07 06:24:46 logger.go:59: [INFO] Received message chat_id=5756911009 text=📦 Каталог 
+POMPON-BOT: 2025/02/07 06:24:47 logger.go:59: [INFO] Received message chat_id=5756911009 text=🛒 Заказать 
+POMPON-BOT: 2025/02/07 06:24:48 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔔 Подписка 
+POMPON-BOT: 2025/02/07 06:25:18 logger.go:40: [INFO] Бот завершает работу.
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:40: [INFO] Category: Коробочки
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:40: [INFO] Category: Открытки
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:40: [INFO] Category: Обёртки
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:40: [INFO] Category: Коробочки
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:40: [INFO] Category: Открытки
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:40: [INFO] Category: Обёртки
+POMPON-BOT: 2025/02/07 06:45:54 logger.go:45: [ERROR] Failed to notify subscribers: failed to send message to subscriber 123456789: Bad Request: chat not found
+POMPON-BOT: 2025/02/07 06:48:42 logger.go:40: [INFO] Бот завершает работу.
+POMPON-BOT: 2025/02/07 13:59:00 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 13:59:00 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 13:59:01 logger.go:40: [INFO] Category: Коробочки
+POMPON-BOT: 2025/02/07 13:59:01 logger.go:40: [INFO] Category: Открытки
+POMPON-BOT: 2025/02/07 13:59:01 logger.go:40: [INFO] Category: Обёртки
+POMPON-BOT: 2025/02/07 13:59:01 logger.go:45: [ERROR] Failed to notify subscribers: failed to send message to subscriber 123456789: Bad Request: chat not found
+POMPON-BOT: 2025/02/07 14:00:20 logger.go:59: [INFO] Received message chat_id=5756911009 text=/start 
+POMPON-BOT: 2025/02/07 14:00:50 logger.go:59: [INFO] Received message text=🔹 About Us chat_id=5756911009 
+POMPON-BOT: 2025/02/07 14:00:54 logger.go:59: [INFO] Received message chat_id=5756911009 text=📦 Catalog 
+POMPON-BOT: 2025/02/07 14:00:55 logger.go:59: [INFO] Received message chat_id=5756911009 text=🛒 Order 
+POMPON-BOT: 2025/02/07 14:00:56 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔔 Subscription 
+POMPON-BOT: 2025/02/07 14:02:35 logger.go:40: [INFO] Получен сигнал завершения работы, закрытие бота...
+POMPON-BOT: 2025/02/07 14:08:04 logger.go:40: [INFO] Бот запускается...
+POMPON-BOT: 2025/02/07 14:08:04 logger.go:40: [INFO] Authorized on account Go_Pompom_bot
+POMPON-BOT: 2025/02/07 14:08:04 logger.go:40: [INFO] Category: Коробочки
+POMPON-BOT: 2025/02/07 14:08:04 logger.go:40: [INFO] Category: Открытки
+POMPON-BOT: 2025/02/07 14:08:04 logger.go:40: [INFO] Category: Обёртки
+POMPON-BOT: 2025/02/07 14:08:05 logger.go:45: [ERROR] Failed to notify subscribers: failed to send message to subscriber 123456789: Bad Request: chat not found
+POMPON-BOT: 2025/02/07 14:10:09 logger.go:59: [INFO] Received message chat_id=5756911009 text=/start 
+POMPON-BOT: 2025/02/07 14:10:11 logger.go:59: [INFO] Received message chat_id=5756911009 text=🔹 About Us 
+POMPON-BOT: 2025/02/07 14:10:14 logger.go:59: [INFO] Received message chat_id=5756911009 text=📦 Catalog 
+POMPON-BOT: 2025/02/07 14:10:16 logger.go:59: [INFO] Received message chat_id=5756911009 text=🛒 Order 
+POMPON-BOT: 2025/02/07 14:10:18 logger.go:59: [INFO] Received message text=🔔 Subscription chat_id=5756911009 
+POMPON-BOT: 2025/02/07 14:15:27 logger.go:40: [INFO] Получен сигнал завершения работы, закрытие бота...
